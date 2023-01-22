@@ -79,6 +79,7 @@
 
 
 					</div>
+					
 					<div class="col-lg-6">
 						<div class="form-wrapper">
 						<div class="wow fadeInRight" data-wow-duration="2s" data-wow-delay="0.2s">
@@ -88,9 +89,11 @@
 									<h3 class="panel-title"><span class="fa fa-pencil-square-o"></span> Make an appoinment <small>(It's free!)</small></h3>
 									</div>
 									<div class="panel-body">
-									<form role="form" class="lead">
-										<div class="row">
-											<div class="col-xs-6 col-sm-6 col-md-6">
+									<form role="form" class="lead" method="post" action="{{url('/')}}/index">
+										
+									@csrf
+									<div class="row">
+										<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>First Name</label>
 													<input type="text" name="first_name" id="first_name" class="form-control input-md">
@@ -100,6 +103,18 @@
 												<div class="form-group">
 													<label>Last Name</label>
 													<input type="text" name="last_name" id="last_name" class="form-control input-md">
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6">
+												<div class="form-group">
+													<label>Age </label>
+													<input type="number" name="age" id="age" class="form-control input-md">
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-6 col-md-6">
+												<div class="form-group">
+													<label>Address</label>
+													<input type="text" name="address" id="address" class="form-control input-md">
 												</div>
 											</div>
 										</div>
@@ -114,9 +129,12 @@
 											<div class="col-xs-6 col-sm-6 col-md-6">
 												<div class="form-group">
 													<label>Phone number</label>
-													<input type="text" name="phone" id="phone" class="form-control input-md">
+													<input type="text" name="phone_number" id="phone_number" class="form-control input-md">
 												</div>
-											</div>
+												
+												
+			                               </div>
+										   
 										</div>
 										
 										<input type="submit" value="Submit" class="btn btn-skin btn-block btn-lg">
